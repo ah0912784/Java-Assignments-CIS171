@@ -32,16 +32,16 @@ public class theCar extends Pane {
 
     //building the car
     private void buildTheCar() {
-    getChildren().clear();
-    bottomBody = new Rectangle(x, y - 20, 50, 10);
-    topBody = new Polygon(x + 10, y - 20, x + 20,y - 30, x + 30, y - 30, x + 40, y - 20);
-    wheel = new Circle(x+15, y - 5, radius);
-    wheel2 = new Circle(x + 35, y - 5, radius);
-    getChildren().addAll(bottomBody, wheel, wheel2, topBody);
-    bottomBody.setFill(GREEN);
-    topBody.setFill(LIGHTBLUE);
+	    getChildren().clear();
+	    bottomBody = new Rectangle(x, y - 20, 50, 10);
+	    topBody = new Polygon(x + 10, y - 20, x + 20,y - 30, x + 30, y - 30, x + 40, y - 20);
+	    wheel = new Circle(x+15, y - 5, radius);
+	    wheel2 = new Circle(x + 35, y - 5, radius);
+	    getChildren().addAll(bottomBody, wheel, wheel2, topBody);
+	    bottomBody.setFill(GREEN);
+	    topBody.setFill(LIGHTBLUE);
 
-}
+    }
     theCar() {
     buildTheCar();
     animation = new Timeline(
