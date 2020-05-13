@@ -1,4 +1,4 @@
-# Exercise 15_32
+# Exercise 15.29
 
 One Paragraph of project description goes here
 
@@ -6,24 +6,29 @@ One Paragraph of project description goes here
 
 This image will display as your example output. Name the image README.jpg in your project folder.
 
-![Sample Output](README.jpg)
+![Sample Output](README.jpg.png)
 
 ## Analysis Steps
 
-take existing code and modify it to allow for an animated ticking clock
+Well after reading the assignment I googled how to work with the event handlers because I find it impossible to decipher Revel.
+
+then I broke down the steps and shapes I needed and started to work from there.
+
 
 ### Design
 
-added event handlers on the display clock class and an Hbox. 
-added animation to the clock pane class with additional code to support animations.
-
+How did you approach your program design? Did you use multiple classes to define various objects?
+I did use multiple classes to help keep the code easy to digest
 ```
 Give examples
 ```
 
 ### Testing
 
-Tested block by block using breaks to make sure that graphics worked properly.
+A step by step series of examples that you developed to properly test the program. 
+
+Say what the step will be
+
 ```
 Give the example
 ```

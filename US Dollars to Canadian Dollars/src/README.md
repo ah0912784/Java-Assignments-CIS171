@@ -8,7 +8,7 @@ simple US dolar to Canadian dollar coverter
 
 This image will display as your example output. Name the image README.jpg in your project folder.
 
-![Sample Output](README.jpg)
+![Sample Output](README.md.PNG)
 
 ## Analysis Steps
 
