@@ -11,6 +11,9 @@ import java.util.Scanner;
  *
  * @author rocke
  */
+
+// who actually created this code? The above comment appears to be from another student in our class
+
 public class ComputeLoan {
     public static void main(String[] args) {   
     // Create a Scanner
