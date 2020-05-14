@@ -63,12 +63,14 @@ public class BlackJackFunctions {
            }
         }
         points = oneOrEleven(ary, points);
+        System.out.println(points);
         return points;
     }
     public void newRound() {
         shuffledDeck.clear();
         playerHand.clear();
         dealerHand.clear();
+        System.out.println(shuffledDeck);
     }
     public void Reset() {
         shuffledDeck.clear();
@@ -79,12 +81,19 @@ public class BlackJackFunctions {
     }
     public void Stay(){
         int cond;
+        dPoints = calculatePoints(dealerHand, dPoints);
+        CheckForWin();
         while (pPoints > dPoints ) {
+            dPoints = calculatePoints(dealerHand, dPoints);
+            CheckForWin();
             String a = addCard();
             dealerHand.add(a);
-            cond = CheckForWin();
+            
             
             if (dPoints > pPoints && dPoints <=21) {
+                break;
+            }
+            else if (dPoints > 21) {
                 break;
             }
             
@@ -106,39 +115,43 @@ public class BlackJackFunctions {
         Random r = new Random();
    
         int x = r.nextInt(shuffledDeck.size());
-           System.out.print(x);
+           //System.out.print(x);
         s = shuffledDeck.get(x);
         //System.out.println(shuffledDeck);
         shuffledDeck.remove(x);
         //System.out.println(shuffledDeck);
-        System.out.println(s);
+        //System.out.println(s);
         return s;
     }
-    public int CheckForWin() {
+    public void CheckForWin() {
        
         int a = 0;
-        if (pPoints > dPoints && pPoints <= 21) {
+        if (dPoints > 21) {
           wins++; 
+          System.out.println("You Win"+wins);
           a = 0;
         }
-        else if (pPoints < dPoints || pPoints > 21) {
-          losses++;
+        else if (pPoints == 21) {
+          wins++;
+          System.out.println("You win "+wins);
           a = 1;
         } 
-        else if ( pPoints > 21 && dPoints > 21) {
-            //draw but both busted
-          a = 2;
+        else if ( pPoints > 21) {
+            losses++;
+            System.out.println("Busted");
+          
         }
         else if (dPoints == pPoints) {
-            //draw
-          a = 2;
+            System.out.println("Draw");
+          
         }
-        else {
-          a = 3;
+        else if (dPoints > pPoints && dPoints <=21){
+          losses++;
+          System.out.println("Beat by the dealer");
             
         }
         
-        return a;
+      
     }
     public ArrayList loadDeck(){
         shuffledDeck.clear();
@@ -146,7 +159,7 @@ public class BlackJackFunctions {
             String s = baseDeck[i];
             shuffledDeck.add(s);
         }
-        System.out.println(shuffledDeck);
+        //System.out.println(shuffledDeck);
         return shuffledDeck;
     }
     public ArrayList shuffle() {
@@ -194,5 +207,13 @@ public class BlackJackFunctions {
     }
     public ArrayList<String> getshuffledDeck() {
         return shuffledDeck;
+    }
+    public String getWins() {
+       String winS = Integer.toString(wins);
+        return winS;
+    }
+    public String getLosses() {
+        String losseS = Integer.toString(losses);
+        return losseS;
     }
 }

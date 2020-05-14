@@ -26,7 +26,8 @@ import javafx.stage.Stage;
  * @author rocke
  */
 public class BlackJackGUI extends Application{
-  
+     BlackJackFunctions func = new BlackJackFunctions();
+   
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -47,6 +48,7 @@ public class BlackJackGUI extends Application{
             func.Deal();
             createImg(4,func.getPlayerHand(),pane);
             createImgDealer(pane, func.getDealerHand());
+            func.calculatePoints(func.getDealerHand(), func.dPoints); 
         });
         
         hitB.setOnAction((ActionEvent event) -> {
@@ -57,7 +59,7 @@ public class BlackJackGUI extends Application{
         stayB.setOnAction((ActionEvent event) -> {
             func.Stay();
             createImg(0,func.getDealerHand(),pane);
-            
+            textBoxes(pane, func.getWins(),func.getLosses());
         });
         
         resetB.setOnAction((ActionEvent event) -> {
@@ -67,8 +69,10 @@ public class BlackJackGUI extends Application{
            //pane.getChildren(ImageView);
         });
         newRound.setOnAction((ActionEvent event)-> {
+           removeImg(pane, func.getPlayerHand(), func.getDealerHand());
            func.newRound();
            func.shuffle();
+           
            
         });
         //adding to pane
@@ -78,16 +82,8 @@ public class BlackJackGUI extends Application{
         pane.add(resetB, 3, 5);
         pane.add(newRound, 4, 5);
         //text fields
-        TextField winsT = new TextField(Integer.toString(func.wins));
-        TextField lossesT = new TextField(Integer.toString(func.losses));
-        Label winsL = new Label("Wins: ");
-        Label lossesL = new Label("Losses:    ");
-        HBox hbox = new HBox();
-      
-        hbox.getChildren().addAll(winsL, winsT,lossesL,lossesT);
-        winsT.setPrefWidth(25);
-        lossesT.setPrefWidth(25);
-        pane.add(hbox,0,3 );
+        textBoxes(pane, func.getWins(),func.getLosses());
+       
         
         
         
@@ -133,5 +129,18 @@ public class BlackJackGUI extends Application{
            pane.add(new ImageView(new Image("cards_png/b1fv.png")),i,0);
     }
 }
+    public void textBoxes(GridPane pane, String w, String L) {
+        TextField winsT = new TextField(w);
+        TextField lossesT = new TextField(L);
+        
+        Label winsL = new Label("Wins: ");
+        Label lossesL = new Label("Losses:    ");
+        HBox hbox = new HBox();
+      
+        hbox.getChildren().addAll(winsL, winsT,lossesL,lossesT);
+        winsT.setPrefWidth(25);
+        lossesT.setPrefWidth(25);
+        pane.add(hbox,0,3 );
+    }
     
 }
