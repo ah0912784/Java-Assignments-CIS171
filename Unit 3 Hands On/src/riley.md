@@ -10,7 +10,6 @@
 
 #### Code
 - all required sorts are implemented
-- proper housekeeping ensures correct data is output - no, input data is not exact to compare different sorts
-- meaningful data is output - must compare apples to apples
-
+- proper housekeeping ensures correct data is output
+- meaningful data is output 
 - good use of methods 
