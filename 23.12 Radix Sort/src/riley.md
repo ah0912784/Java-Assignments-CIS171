@@ -7,8 +7,8 @@ Radix Sort
 ### Grading Notes
 
 #### Doc
-- readme markdown file included
-- readme displays image of program output
+- readme markdown file included but nor properly named
+- readme displays image of program output- no
 - code is commented
 
 #### Code
