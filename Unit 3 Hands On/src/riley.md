@@ -1,0 +1,16 @@
+# Unit 3 Exam Hands On - Sort Performance Comparison
+
+
+### Grading Notes
+
+#### Doc
+- readme markdown file included - improperly named
+- readme displays image of program output
+- code is commented
+
+#### Code
+- all required sorts are implemented
+- proper housekeeping ensures correct data is output - no, input data is not exact to compare different sorts
+- meaningful data is output - must compare apples to apples
+
+- good use of methods 

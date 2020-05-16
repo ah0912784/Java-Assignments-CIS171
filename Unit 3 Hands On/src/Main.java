@@ -14,6 +14,7 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
+        // this heading does not match the data output
         System.out.print("|Array size |Selection Sort|Bubble Sort |Merge Sort |Quick Sort |Heap Sort |Radix Sort |");
         for (int i = 50000; i <= 300000; i += 50000) {
             printValue(i);
@@ -46,7 +47,7 @@ public static void printValue(int arraySize) {
     long executionTime = endTime - startTime;
     System.out.printf("%" + strWidth + "d|", executionTime);
 
-
+// we cannot use a new list here, if we want to have a valid comparison, we must use the same exact data
     list2 = new int[arraySize];
     System.arraycopy(list, 0, list2, 0, list.length);
     startTime = System.currentTimeMillis();
